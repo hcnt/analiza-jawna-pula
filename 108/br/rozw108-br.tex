@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathdots}
+\usepackage{url}
+%\usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage[medium, compact]{titlesec}
+\usepackage{multicol}
+
+\setlength{\parindent}{0pt} \setlength{\parskip}{1ex}
+\setlength{\columnsep}{1.5cm}
+\setlength{\itemsep}{0.5ex}
+
+\setlist[enumerate,1]{itemsep=0.1ex,topsep=0.2ex,leftmargin=2em}
+\setlist[itemize,1]{itemsep=-0.3ex,topsep=0ex,leftmargin=1.1em}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\dm}[1]{\displaystyle{#1}}
+\newcommand{\ent}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\emptynorm}{\norm{\hspace{0.2em} \cdot \hspace{0.2em} }}
+
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\sgn}{\mathrm{sgn}\hspace{0.1em}}
+\renewcommand{\arc}{\mathrm{arc}\hspace{0.05em}}
+\renewcommand{\tg}{\mathrm{tg}\hspace{0.1em}}
+
+
+\renewcommand{\Re}{\mathrm{Re}}
+
+\newcommand{\textq}[1]{\quad \text{#1} \quad}
+\newcommand{\textqq}[1]{\qquad \text{#1} \qquad}
+\newcommand{\mathq}{\text{?}}
+
+\newcommand{\bigexists}{\mbox{\Large $\mathsurround0pt\exists$}\hspace{0.2em}}
+\newcommand{\bigforall}{\mbox{\Large $\mathsurround0pt\forall$}\hspace{0.1em}}
+\newcommand{\then}{\hspace{0.6em} \Rightarrow \hspace{0.6em}}
+\newcommand{\relrho}{\hspace{0.4ex} \mathbf\varrho \hspace{0.6ex}}
+\newcommand{\inj}{\overset{\scriptscriptstyle{1-1}}{\to}}
+\newcommand{\surj}{\overset{\scriptscriptstyle{\mathrm{na}}}{\to}}
+\newcommand{\bij}{\overset{\scriptscriptstyle{1-1}}{\underset{\scriptscriptstyle{\mathrm{na}}}{\to}}}
+
+\newcommand{\Mod}[1]{\,\left( \mathrm{mod} \hspace{0.5em} #1 \right)}
+\newcommand{\limn}{\lim_{n\to\infty}}
+
+\newcommand{\arctg}{\mathrm{arctg}\hspace{0.1em}}
+
+\begin{document}
+\section*{Zadanie 108}
+\noindent
+Obliczyć granicę
+\[
+	\lim_{x \to 0} \frac{e^{\tg x} - e^x}{\tg x - x}
+.\] 
+\noindent
+Rozwijam poszczególne funkcje za pomocą szeregów Taylora.
+
+
+\begin{gather*}
+	\tg x = x + \frac{x^3}{3} + o(x^3) \\
+	\tg x - x = \frac{x^3}{3} + o(x^3) \\
+	e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + o(x^3) \\
+	e^{\tg x} = 1 + \left( \tg x \right) + \frac{\left( \tg x \right)^2 }{2!} + \frac{\left( \tg x \right)^3 }{3!} + o\left( (\tg x)^3 \right) = \\
+	1 + x + \frac{x^3}{3} + \frac{x^2}{2!} + \frac{x^3}{3!} + o(x^3) \\
+	e^{\tg x} - e^x = \frac{x^3}{3} + o(x^3)
+\end{gather*}
+
+\noindent
+Wstawiam rozwinięcia do granicy
+
+\begin{gather*}
+	\lim_{x \to 0} \frac{e^{\tg x} - e^x}{\tg x - x} = \lim_{x \to 0} \frac{x^3 + o(x^3)}{x^3 + o(x^3)} = \lim_{x \to 0} \frac{\frac{1}{3} + \frac{o(x^3)}{x^3}}{\frac{1}{3} + \frac{o(x^3)}{x^3}} = 1
+\end{gather*}
+
+
+\end{document}
