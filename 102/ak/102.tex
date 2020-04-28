@@ -1,0 +1,25 @@
+\documentclass{report}
+\usepackage{polski}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{array}% http://ctan.org/pkg/array
+\newtheorem{lemma}{Lemma}
+\newtheorem{sublemma}{Lemma}[lemma]
+\begin{document}
+\newpage
+Istnienie co najmniej jednego pierwiastka jest oczywiste -- $(3, 4, 5)$
+jest trójką pitagorejską, więc dla $x=2$ mamy miejsce zerowe.
+Szukam takich $x$, że $f(x) = 0$, czyli:
+$$ 3^x + 4^x = 5^x $$
+$$ (\frac{3}{5})^x + (\frac{4}{5})^x  = 1 $$
+\noindent Zauważmy, że $(\frac{3}{5})^x$ i $(\frac{4}{5})^x$ są ściśle malejące
+więc ich suma również. Stąd będzie istniał co najwyżej jeden argument, dla 
+którego zajdzie $ (\frac{3}{5})^x + (\frac{4}{5})^x  = 1 $, a taki już wskazałam.
+\end{document}
